@@ -31,7 +31,7 @@
                         </div>
                         <!--end search section-->
                     </li>
-                    <?php if($this->uri->segment(1)=="welcome"): ?>
+                    <?php if($this->uri->segment(1)==""): ?>
                     <li class="selected">
                         <?php else: ?>
                     <li>
