@@ -38,6 +38,25 @@
                     <?php endif; ?>
                         <a href="<?php echo base_url() ?>"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
                     </li>
+                    <?php if($this->uri->segment(1)=="pegawai"): ?>
+                    <li class="active">
+                    <?php else: ?>
+                    <li>
+                    <?php endif; ?>
+                        <a href="#"><i class="fa fa-edit fa-fw"></i>Master Pegawai<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                           <?php if($this->uri->segment(1)=="pegawai"): ?>
+                            <li class="selected">
+                            <?php else: ?>
+                            <li>
+                            <?php endif; ?>
+                                <a href="<?php echo site_url()?>/pegawai">Data Pegawai</a>
+                            </li>
+                            <li>
+                                <a href="morris.html">Morris Charts</a>
+                            </li>
+                        </ul>
+                    </li>
                     <li>
                         <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
