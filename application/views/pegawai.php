@@ -1,3 +1,5 @@
+        
+        <?php  echo link_tag('assets/plugins/bootstrap/bootstrap-datetimepicker.css'); ?>
         <style>
         .error{
             margin-top: 6px;
@@ -10,6 +12,13 @@
             font-weight: 600;
             line-height: 14px;
         }
+        .glyphicon-chevron-left:before {
+           content: "<<";
+        }
+        .glyphicon-chevron-right:before {
+           content: ">>";
+        }
+        
         </style>
         <!--  page-wrapper -->
           <div id="page-wrapper">
@@ -51,8 +60,8 @@
                                         </div>
                                         <div class="form-group row">
                                             <label for="" class="col-sm-2 form-control-label">Date Birth</label>
-                                            <div class="col-sm-6">
-                                                <input class="form-control required" type="text" id="tgl_lahir" name="tgl_lahir" placeholder="Enter Date Birth">
+                                            <div class="col-sm-3">
+                                                <input class="form-control required date" type="text" id="tgl_lahir" name="tgl_lahir" placeholder="Enter Date Birth">
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -63,80 +72,22 @@
                                         </div>
                                     </form>
                                 </div>
-                                <!-- <div class="col-lg-6">
-                                    <h1>Disabled Form States</h1>
-                                    <form role="form">
-                                        <fieldset disabled="disabled">
-                                            <div class="form-group">
-                                                <label for="disabledSelect">Disabled input</label>
-                                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="disabledSelect">Disabled select menu</label>
-                                                <select id="disabledSelect" class="form-control">
-                                                    <option>Disabled select</option>
-                                                </select>
-                                            </div>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox">Disabled Checkbox
-                                                </label>
-                                            </div>
-                                            <button type="submit" class="btn btn-primary">Disabled Button</button>
-                                        </fieldset>
-                                    </form>
-                                    <h1>Form Validation States</h1>
-                                    <form role="form">
-                                        <div class="form-group has-success">
-                                            <label class="control-label" for="inputSuccess">Input with success</label>
-                                            <input type="text" class="form-control" id="inputSuccess">
-                                        </div>
-                                        <div class="form-group has-warning">
-                                            <label class="control-label" for="inputWarning">Input with warning</label>
-                                            <input type="text" class="form-control" id="inputWarning">
-                                        </div>
-                                        <div class="form-group has-error">
-                                            <label class="control-label" for="inputError">Input with error</label>
-                                            <input type="text" class="form-control" id="inputError">
-                                        </div>
-                                    </form>
-                                    <h1>Input Groups</h1>
-                                    <form role="form">
-                                        <div class="form-group input-group">
-                                            <span class="input-group-addon">@</span>
-                                            <input type="text" class="form-control" placeholder="Username">
-                                        </div>
-                                        <div class="form-group input-group">
-                                            <input type="text" class="form-control">
-                                            <span class="input-group-addon">.00</span>
-                                        </div>
-                                        <div class="form-group input-group">
-                                            <span class="input-group-addon"><i class="fa fa-eur"></i>
-                                            </span>
-                                            <input type="text" class="form-control" placeholder="Font Awesome Icon">
-                                        </div>
-                                        <div class="form-group input-group">
-                                            <span class="input-group-addon">$</span>
-                                            <input type="text" class="form-control">
-                                            <span class="input-group-addon">.00</span>
-                                        </div>
-                                        <div class="form-group input-group">
-                                            <input type="text" class="form-control">
-                                            <span class="input-group-btn">
-                                                <button class="btn btn-default" type="button"><i class="fa fa-search"></i>
-                                                </button>
-                                            </span>
-                                        </div>
-                                    </form> -->
-                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
                      <!-- End Form Elements -->
-                    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+                    <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/bootstrap/moment.js"></script>
                     <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/jquery.validate.min.js"></script>
+                    <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/bootstrap/bootstrap-datetimepicker.js"></script>
                     <script>  
-                      $(document).ready(function(){
+                    $(function () {
+                        $('#tgl_lahir').datetimepicker({
+                            viewMode: 'years',
+                            format: 'DD/MM/YYYY'
+                        });
+                    });
+                    $(document).ready(function(){
                         $('#register_form').validate();
                         $(document).on('click','#btn-register',function(){
                           var url = "<?php echo site_url('login/user_login');?>";       

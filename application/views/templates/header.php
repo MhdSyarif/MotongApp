@@ -12,5 +12,6 @@
     <?php  echo link_tag('assets/css/main-style.css'); ?>
     <!-- Page-Level CSS -->
     <?php  echo link_tag('assets/plugins/morris/morris-0.4.3.min.css'); ?>
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
    </head>
 <body>
