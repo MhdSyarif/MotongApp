@@ -1,4 +1,20 @@
-<!--  page-wrapper -->
+    <style>
+        #spinner
+        {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            /*Change your loading image here*/
+            background: url(assets/img/preloader_3_128.gif) 50% 50% no-repeat #ede9df;
+        }
+    </style>
+
+        <div id="spinner"></div>
+
+        <!--  page-wrapper -->
         <div id="page-wrapper">
 
             <div class="row">
@@ -14,7 +30,7 @@
                 <div class="col-lg-12">
                     <div class="alert alert-info">
                         <i class="fa fa-folder-open"></i><b>&nbsp;Hello ! </b>Welcome Back <b>Jonny Deen </b>
- <i class="fa  fa-pencil"></i><b>&nbsp;2,000 </b>Support Tickets Pending to Answere. nbsp;
+                        <i class="fa  fa-pencil"></i><b>&nbsp;2,000 </b>Support Tickets Pending to Answere. nbsp;
                     </div>
                 </div>
                 <!--end  Welcome -->
@@ -423,3 +439,6 @@
 
     </div>
     <!-- end wrapper -->
+    <script>
+        $(window).load(function () { $("#spinner").fadeOut(4000); })
+    </script>
