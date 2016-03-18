@@ -80,7 +80,7 @@
         </div>
     </body>
 </html>
-<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/plugins/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/jquery.validate.min.js"></script>
 <script>  
   $(document).ready(function(){
